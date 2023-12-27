@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+      MY_VAR: "Minha ENV_VAR"
+phases:
+  install:
+    runtime-versions:
+       python: 3.9
+  pre_build:
+    on-failure: ABORTs
+    commands:
+        - echo Install Requirements
+        - pip install -r requirements.txt
+  build:
+        - pytest test_calculadora.py
+  post_build:
+    commands:
+       - echo Finished Build
