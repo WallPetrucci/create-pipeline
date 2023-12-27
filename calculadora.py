@@ -13,5 +13,8 @@ class Calculadora:
     def divisao(self, a, b):
         return a / b
 
+    def multiplicacao(self, a, b):
+        return a * b
+
     def get_env_var(self):
         return self.envar

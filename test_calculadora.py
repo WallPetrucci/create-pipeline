@@ -15,6 +15,11 @@ def test_que_calculadora_divisao():
     result = calc.divisao(10, 2)
     assert result == 5
 
+def test_que_calculadora_multiplicacao():
+    calc = Calculadora()
+    result = calc.multiplicaca(10, 2)
+    assert result == 5
+
 def test_env_var():
     calc = Calculadora()
     result = calc.get_env_var()
