@@ -7,5 +7,5 @@ class Calculadora:
     def soma(self, a, b):
         return a + b
 
-calculadora = Calculadora()
-print(calculadora.soma(5, 5))
+    def subtrai(self, a, b):
+        return a - b
