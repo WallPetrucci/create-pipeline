@@ -1,5 +1,12 @@
-- name: Run CodeBuild
-  uses: aws-actions/aws-codebuild-run-build@v1
-  with:
-    project-name: PullRequestCodeBuild
-    buildspec-override: ./buildspec.yaml
+name: AWS Code Build run
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Code-Build-Run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run CodeBuild
+        uses: aws-actions/aws-codebuild-run-build@v1
+        with:
+          project-name: PullRequestCodeBuild
+          buildspec-override: ./buildspec.yaml
