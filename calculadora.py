@@ -18,3 +18,6 @@ class Calculadora:
 
     def get_env_var(self):
         return self.envar
+    
+    def get_a(self, a):
+        return a
