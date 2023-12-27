@@ -2,10 +2,13 @@ import os
 
 class Calculadora:
     def __init__(self):
-        print(f"VARIAVEL DE AMBIENTE - {os.getenv('MY_VAR')}")
+       self.envar =  os.getenv('MY_VAR')
     
     def soma(self, a, b):
         return a + b
 
-calculadora = Calculadora()
-print(calculadora.soma(5, 5))
+    def subtrai(self, a, b):
+        return a - b
+
+    def get_env_var(self):
+        return self.envar
