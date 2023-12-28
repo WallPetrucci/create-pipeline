@@ -20,4 +20,4 @@ jobs:
         uses: aws-actions/aws-codebuild-run-build@v1
         with:
           project-name: PullRequestCodeBuild
-          buildspec-override: ../buildspec.yaml
+          buildspec-override: ./buildspec.yaml
