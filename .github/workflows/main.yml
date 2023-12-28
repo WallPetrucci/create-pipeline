@@ -1,11 +1,15 @@
 name: AWS Code Build run
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
+  push
   pull_request:
     types: [opened, reopened, edited]
 jobs:
   Code-Build-Run:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
