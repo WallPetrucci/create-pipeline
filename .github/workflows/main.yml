@@ -1,7 +1,6 @@
 name: AWS Code Build run
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-  push
   pull_request:
     types: [opened, reopened, edited]
 jobs:
