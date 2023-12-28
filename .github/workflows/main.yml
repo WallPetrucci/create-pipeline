@@ -10,8 +10,11 @@ jobs:
       - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::227531894161:role/service-role/codebuild-PullRequestCodeBuild-service-role
+        aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        role-duration-seconds: 3600
         
       - name: Run CodeBuild
         uses: aws-actions/aws-codebuild-run-build@v1
