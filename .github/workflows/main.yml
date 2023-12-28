@@ -10,7 +10,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::227531894161:role/service-role/codebuild-PullRequestCodeBuild-service-role
+          role-to-assume: arn:aws:iam::227531894161:role/GithubActionsRole
           aws-region: us-east-2
         
       - name: Run CodeBuild
