@@ -10,8 +10,11 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install Requirements
-        run: pip install -r $GITHUB_WORKSPACE/requirements.txt
+        run: pip install -r ${{ github.workspace }}/requirements.txt
 
       - name: Run tests and collect coverage
         run: pytest --cov .

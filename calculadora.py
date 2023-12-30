@@ -1,8 +1,8 @@
 import os
 
 class Calculadora:
-    def __init__(self):
-       self.envar =  os.getenv('MY_VAR')
+    # def __init__(self):
+    #    self.envar =  os.getenv('MY_VAR')
     
     def soma(self, a, b):
         return a + b
