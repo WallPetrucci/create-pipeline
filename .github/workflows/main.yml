@@ -4,20 +4,28 @@ on:
   pull_request:
     types: [opened, reopened, edited]
 jobs:
-  Code-Build-Run:
+  Unit-Test-And-Code-Coverage:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
+    # permissions:
+    #   id-token: write
+    #   contents: read
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::227531894161:role/GithubActionsRole
-          aws-region: us-east-2
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     role-to-assume: arn:aws:iam::227531894161:role/GithubActionsRole
+      #     aws-region: us-east-2
         
-      - name: Run CodeBuild
-        uses: aws-actions/aws-codebuild-run-build@v1
-        with:
-          project-name: PullRequestCodeBuild
-          buildspec-override: ./buildspec.yaml
+      # - name: Run Unit Test
+      #   uses: aws-actions/aws-codebuild-run-build@v1
+      #   with:
+      #     project-name: PullRequestCodeBuild
+      #     buildspec-override: ./buildspec.yaml
+
+      - name: Run tests and collect coverage
+        run: pytest --cov .
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
