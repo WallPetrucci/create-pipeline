@@ -4,12 +4,11 @@ on:
   pull_request:
     types: [opened, reopened, edited]
 jobs:
-  Unit-Test-And-Code-Coverage:
+  Code-Build-Run:
     runs-on: ubuntu-latest
-    # permissions:
-    #   id-token: write
-    #   contents: read
-    - uses: actions/checkout@v4
+    permissions:
+      id-token: write
+      contents: read
     steps:
       # - name: Configure AWS Credentials
       #   uses: aws-actions/configure-aws-credentials@v4
