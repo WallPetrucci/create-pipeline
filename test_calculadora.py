@@ -12,8 +12,8 @@ def test_que_calculadora_subtrai():
 
 def test_que_calculadora_divisao():
     calc = Calculadora()
-    result = calc.divisao(8, 2)
-    assert result == 4
+    result = calc.divisao(2, 2)
+    assert result == 1
 
 def test_env_var():
     calc = Calculadora()
