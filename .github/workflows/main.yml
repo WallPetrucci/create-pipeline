@@ -2,7 +2,7 @@ name: AWS Code Build run
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
-    types: [opened, reopened, edited, synchronize, ready_for_reviews]
+    types: [opened, reopened, edited]
 jobs:
   Unit-Test-And-Code-Coverage:
     runs-on: ubuntu-latest
