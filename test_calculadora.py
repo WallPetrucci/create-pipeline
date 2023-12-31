@@ -14,6 +14,8 @@ def test_que_calculadora_divisao():
     calc = Calculadora()
     result = calc.divisao(6, 2)
     assert result == 3
+    result = calc.divisao(8, 4)
+    assert result == 2
 
 # def test_env_var():
 #     calc = Calculadora()
