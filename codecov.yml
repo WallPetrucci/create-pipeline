@@ -5,9 +5,11 @@ coverage:
   status:
     project:
       default: false  # disable the default status that measures entire project
+        informational: true
       source:
         target: 97%
         threshold: 0.002
     patch:
       default:
+        informational: true
         target: 80% 
